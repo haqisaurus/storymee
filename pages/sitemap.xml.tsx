@@ -5,7 +5,7 @@ const Sitemap = () => {};
 
 export const getServerSideProps = ({ req, res }: any) => {
     console.log(req.headers);
-    const baseUrl = "http://" + req.headers.host;
+    const baseUrl = "https://www.storymee.com";
     const staticPages = fs
         .readdirSync("pages")
         .filter((staticPage) => {
