@@ -2,6 +2,7 @@ import { PlusOutlined } from "@ant-design/icons";
 import { Avatar, Button, Col, Dropdown, Input, Menu, Row, Space } from "antd";
 import { Header } from "antd/lib/layout/layout";
 import Link from "next/link";
+import Script from "next/script";
 import React from "react";
 
 interface HeaderAuthProps {}
@@ -21,6 +22,17 @@ class HeaderAuth extends React.Component<HeaderAuthProps, HeaderAuthState> {
     render() {
         return (
             <>
+                {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+                <Script src="https://www.googletagmanager.com/gtag/js?id=G-YVZWMB26G0" strategy="afterInteractive" />
+                <Script id="google-analytics" strategy="afterInteractive">
+                    {`
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){window.dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-YVZWMB26G0');
+                    `}
+                </Script>
                 <Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>
                     <Row justify="space-between">
                         <Col span={12}>

@@ -1,14 +1,12 @@
-import type { NextPage } from "next";
-import { Layout, Menu, Avatar, Button, Card, Col, Comment, Divider, Row, Space, Typography, Input, Tooltip, Dropdown } from "antd";
+import { Layout, Avatar, Card, Col, Comment, Divider, Row, Typography, Tooltip } from "antd";
 import Link from "next/link";
-import { DislikeFilled, LikeFilled, PlusOutlined, StarFilled, StarTwoTone } from "@ant-design/icons";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
+import { DislikeFilled, LikeFilled } from "@ant-design/icons";
 import moment from "moment";
 import React from "react";
 import HeaderNoAuth from "../components/HeaderNoAuth";
 import Head from "next/head";
+import Script from "next/script";
+
 React.useLayoutEffect = React.useEffect;
 const { Header, Content, Footer } = Layout;
 interface HomeProps {}
@@ -25,19 +23,6 @@ class Home extends React.Component<HomeProps, HomeState> {
                     <meta name="description" content={"Read the most popular stories on StoryMee, the world's largest social storytelling platform."} />
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                     <meta name="google-site-verification" content="vRQvkcrCd1m2M35pJSY9oXp3hBTO-82zIcdgRkkOj0g" />
-                    {/* <!--    (gtag.js) - Google Analytics --> */}
-                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YVZWMB26G0"></script>
-                    <script
-                        dangerouslySetInnerHTML={{
-                            __html: `
-                            window.dataLayer = window.dataLayer || [];
-                            function gtag(){dataLayer.push(arguments);}
-                            gtag('js', new Date());
-
-                            gtag('config', 'G-YVZWMB26G0');
-                            `,
-                        }}
-                    />
                 </Head>
                 <Layout>
                     <HeaderNoAuth />

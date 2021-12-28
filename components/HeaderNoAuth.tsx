@@ -2,6 +2,7 @@ import { PlusOutlined } from "@ant-design/icons";
 import { Row, Col, Menu, Space, Input, Button, Dropdown, Avatar } from "antd";
 import { Header } from "antd/lib/layout/layout";
 import Link from "next/link";
+import Script from "next/script";
 import React from "react";
 
 interface HeaderNoAuthProps {}
@@ -13,6 +14,17 @@ class HeaderNoAuth extends React.Component<HeaderNoAuthProps, HeaderNoAuthState>
     render() {
         return (
             <>
+                {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+                <Script src="https://www.googletagmanager.com/gtag/js?id=G-YVZWMB26G0" strategy="afterInteractive" />
+                <Script id="google-analytics" strategy="afterInteractive">
+                    {`
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){window.dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-YVZWMB26G0');
+                    `}
+                </Script>
                 <Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>
                     <Row justify="space-between">
                         <Col span={12}>

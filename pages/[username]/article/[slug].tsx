@@ -8,6 +8,7 @@ import htmlParser from "html-react-parser";
 import Link from "next/link";
 import Head from "next/head";
 import moment from "moment";
+import Script from "next/script";
 interface PostItemProps {
     query: any;
     postDetail: any;
@@ -39,20 +40,6 @@ class PostItem extends React.Component<PostItemProps, PostItemState> {
                     </title>
                     <meta name="description" content={meta} />
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                    <meta name="google-site-verification" content="vRQvkcrCd1m2M35pJSY9oXp3hBTO-82zIcdgRkkOj0g" />
-                    {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YVZWMB26G0"></script>
-                    <script
-                        dangerouslySetInnerHTML={{
-                            __html: `
-                            window.dataLayer = window.dataLayer || [];
-                            function gtag(){dataLayer.push(arguments);}
-                            gtag('js', new Date());
-
-                            gtag('config', 'G-YVZWMB26G0');
-                            `,
-                        }}
-                    />
                 </Head>
                 <Layout>
                     {isAuth ? <HeaderAuth /> : <HeaderNoAuth />}
