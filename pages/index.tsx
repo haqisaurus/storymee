@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import moment from "moment";
 import React from "react";
+import HeaderNoAuth from "../components/HeaderNoAuth";
 React.useLayoutEffect = React.useEffect;
 const { Header, Content, Footer } = Layout;
 interface HomeProps {}
@@ -18,67 +19,7 @@ class Home extends React.Component<HomeProps, HomeState> {
     render() {
         return (
             <Layout>
-                <Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>
-                    <Row justify="space-between">
-                        <Col span={12}>
-                            <div
-                                className="logo"
-                                style={{
-                                    float: "left",
-                                    backgroundImage: `url("/vercel.svg")`,
-                                    backgroundSize: "contain",
-                                    backgroundPosition: "center",
-                                    backgroundRepeat: "no-repeat",
-                                    height: 64,
-                                    width: 70,
-                                    marginRight: 10,
-                                }}
-                            ></div>
-                            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
-                                <Menu.Item key="1">Home</Menu.Item>
-                                <Menu.SubMenu key="Menu.SubMenu" title="Categories">
-                                    <Menu.ItemGroup title="Item 1">
-                                        <Menu.Item key="setting:1">Option 1</Menu.Item>
-                                        <Menu.Item key="setting:2">Option 2</Menu.Item>
-                                    </Menu.ItemGroup>
-                                    <Menu.ItemGroup title="Item 2">
-                                        <Menu.Item key="setting:3">Option 3</Menu.Item>
-                                        <Menu.Item key="setting:4">Option 4</Menu.Item>
-                                    </Menu.ItemGroup>
-                                </Menu.SubMenu>
-                            </Menu>
-                        </Col>
-                        <Col>
-                            <Space>
-                                <Input placeholder="Search story..."></Input>
-                                <Button type="ghost" icon={<PlusOutlined />} style={{ color: "white" }}>
-                                    New
-                                </Button>
-                                <Dropdown
-                                    overlay={
-                                        <Menu>
-                                            <Menu.Item>
-                                                <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
-                                                    1st menu item
-                                                </a>
-                                            </Menu.Item>
-
-                                            <Menu.Item disabled>
-                                                <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
-                                                    3rd menu item (disabled)
-                                                </a>
-                                            </Menu.Item>
-                                            <Menu.Divider />
-                                            <Menu.Item danger>Logout</Menu.Item>
-                                        </Menu>
-                                    }
-                                >
-                                    <Avatar></Avatar>
-                                </Dropdown>
-                            </Space>
-                        </Col>
-                    </Row>
-                </Header>
+                <HeaderNoAuth />
                 <Content className="site-layout">
                     <div className="site-layout-background">
                         <Card className="dashbord-card" style={{ width: "100%" }}>
@@ -110,8 +51,43 @@ class Home extends React.Component<HomeProps, HomeState> {
                             {/*e: header posting  */}
                             {/* the posting  */}
                             <Typography.Paragraph style={{ margin: "0 0 10px" }}>
-                                Next.js is a React framework that is used to build fast, high-performance, hybrid static and server side rendering web applications. Ant Design is a UI library that provides a
-                                lot of pre-made React components like Button, DatePicker, DropDown, Drawer, etc, which can help you create beautiful and enterprise-class products.
+                                <p>
+                                    Next.js is a React framework that is used to build fast, high-performance, hybrid static and server side rendering web applications. Ant Design is a UI library that provides
+                                    a lot of pre-made React components like Button, DatePicker, DropDown, Drawer, etc, which can help you create beautiful and enterprise-class products.
+                                </p>
+                                <p>
+                                    Tempo hari aku sudah Konsul dengan tim penilai, banyak masukan dari sana. Kemudian aq revisi draft ku, sesuai arahan tim penilai. Sekarang tinggal tanda tangan atasan.
+                                    Ternyata masih ada yang harus direvisi lagi. Melelahkan memang proses ini. Persis saat pengajuan karya tulis. Hari ini revisi bagian ini. Besok masih ada bagian lain lagi.
+                                    Terus begitu.  Kenapa g dari awal? kalau memang drat itu salah, ya coret-coret saja sekalian. Revisinya juga sekalian. Ini malah satu-satu. 
+                                </p>
+                                <p>
+                                    Aku menarik nafas. Sabar. Sabar. Sabar. Ini ujian. Mau naik kelas harus melalui proses ujian. Ayo semangat. Demi semuanya. Pasti aku bisa. Semangat ku kembali datang.
+                                    Kujalani proses ini satu-satu, mulai dari begadang sampai pagi entry data. Kemudian ngedeprok didepan laptop tanpa kenal waktu. Mengabaikan suami dan keluarga. Untung nya
+                                    suami support penuh. Sehingga urusan tetek bengek keluarga dia yang atur. Alhamdulillah.  Selanjutnya wira-wiri konsul sana-sini.Sampai terakhir, pontang-panting minta tanda
+                                    tangan dan ACC.
+                                </p>
+                                <p>
+                                    " Dek, surat ijin belajar mu kok berbeda. Harusnya ijin belajar saja, kenapa kok bunyinya  berbeda?" Bu Heni ,tim penilai menghubungi ku menyampaikan kalau permasalahan yang
+                                    menjadi kendala. Aku menyampaikan bahwa itu sudah sesuai dengan permintaan. Dan surat itu dianggap sama dengan surat ijin belajar.
+                                </p>
+                                <p>" Gini aja, tolong hubungi kepegawaian saja, solusinya bagaimana!"</p>
+                                <p>"Baiklah Bu!" Kembali aku mengiyakan dan berusaha mencari solusi.</p>
+                                <p>Padahal kemarin aku sudah tenang, berkas sudah kelar. Pikirku, tinggal terbit surat penetapan. Malah ada lagi. Ah.. harus lebih bersabar lagi. Ini ujian.</p>
+                                <p>
+                                    Next.js is a React framework that is used to build fast, high-performance, hybrid static and server side rendering web applications. Ant Design is a UI library that provides
+                                    a lot of pre-made React components like Button, DatePicker, DropDown, Drawer, etc, which can help you create beautiful and enterprise-class products.
+                                </p>
+                                <p>
+                                    Tempo hari aku sudah Konsul dengan tim penilai, banyak masukan dari sana. Kemudian aq revisi draft ku, sesuai arahan tim penilai. Sekarang tinggal tanda tangan atasan.
+                                    Ternyata masih ada yang harus direvisi lagi. Melelahkan memang proses ini. Persis saat pengajuan karya tulis. Hari ini revisi bagian ini. Besok masih ada bagian lain lagi.
+                                    Terus begitu.  Kenapa g dari awal? kalau memang drat itu salah, ya coret-coret saja sekalian. Revisinya juga sekalian. Ini malah satu-satu. 
+                                </p>
+                                <p>
+                                    Aku menarik nafas. Sabar. Sabar. Sabar. Ini ujian. Mau naik kelas harus melalui proses ujian. Ayo semangat. Demi semuanya. Pasti aku bisa. Semangat ku kembali datang.
+                                    Kujalani proses ini satu-satu, mulai dari begadang sampai pagi entry data. Kemudian ngedeprok didepan laptop tanpa kenal waktu. Mengabaikan suami dan keluarga. Untung nya
+                                    suami support penuh. Sehingga urusan tetek bengek keluarga dia yang atur. Alhamdulillah.  Selanjutnya wira-wiri konsul sana-sini.Sampai terakhir, pontang-panting minta tanda
+                                    tangan dan ACC.
+                                </p>
                             </Typography.Paragraph>
                             {/* e: the posting  */}
                             <Divider style={{ margin: "7px 0 24px" }} />
