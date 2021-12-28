@@ -1,6 +1,7 @@
 import { PlusOutlined } from "@ant-design/icons";
 import { Avatar, Button, Col, Dropdown, Input, Menu, Row, Space } from "antd";
 import { Header } from "antd/lib/layout/layout";
+import Link from "next/link";
 import React from "react";
 
 interface HeaderAuthProps {}
@@ -24,7 +25,7 @@ class HeaderAuth extends React.Component<HeaderAuthProps, HeaderAuthState> {
                     <Row justify="space-between">
                         <Col span={12}>
                             <Space>
-                                <a href="/">
+                                <Link href={"/"} passHref>
                                     <div
                                         className="logo"
                                         style={{
@@ -38,14 +39,14 @@ class HeaderAuth extends React.Component<HeaderAuthProps, HeaderAuthState> {
                                             marginRight: 10,
                                         }}
                                     ></div>
-                                </a>
+                                </Link>
 
                                 <Input placeholder="Search story..."></Input>
                             </Space>
                         </Col>
                         <Col>
                             <Space>
-                                <Button type="ghost" icon={<PlusOutlined />} style={{ color: "white" }} href={`/@${this.state.username}/new`}>
+                                <Button type="ghost" icon={<PlusOutlined />} style={{ color: "white" }} href={`/@${this.state.username}/new`} rel="noopener noreferrer">
                                     New
                                 </Button>
                                 <Dropdown

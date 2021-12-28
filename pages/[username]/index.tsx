@@ -35,7 +35,7 @@ class Home extends React.Component<HomeProps, HomeState> {
                                             <Avatar size={45} shape="circle" />
                                         </Col>
                                         <Col flex="auto">
-                                            <Link href={""}>
+                                            <Link href={""} passHref>
                                                 <span style={{ display: "block", fontWeight: 500 }}>Nama saya</span>
                                             </Link>
                                             <sub

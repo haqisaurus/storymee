@@ -1,6 +1,7 @@
 import { PlusOutlined } from "@ant-design/icons";
 import { Row, Col, Menu, Space, Input, Button, Dropdown, Avatar } from "antd";
 import { Header } from "antd/lib/layout/layout";
+import Link from "next/link";
 import React from "react";
 
 interface HeaderNoAuthProps {}
@@ -16,7 +17,7 @@ class HeaderNoAuth extends React.Component<HeaderNoAuthProps, HeaderNoAuthState>
                     <Row justify="space-between">
                         <Col span={12}>
                             <Space>
-                                <a href="/">
+                                <Link href={"/"} passHref>
                                     <div
                                         className="logo"
                                         style={{
@@ -30,7 +31,7 @@ class HeaderNoAuth extends React.Component<HeaderNoAuthProps, HeaderNoAuthState>
                                             marginRight: 10,
                                         }}
                                     ></div>
-                                </a>
+                                </Link>
 
                                 <Input placeholder="Search..." />
                             </Space>

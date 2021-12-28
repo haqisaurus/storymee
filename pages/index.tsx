@@ -39,7 +39,7 @@ class Home extends React.Component<HomeProps, HomeState> {
                                                 <Avatar size={45} shape="circle" />
                                             </Col>
                                             <Col flex="auto">
-                                                <Link href={""}>
+                                                <Link href={"/"} passHref>
                                                     <span style={{ display: "block", fontWeight: 500 }}>Nama saya</span>
                                                 </Link>
                                                 <sub
@@ -59,37 +59,6 @@ class Home extends React.Component<HomeProps, HomeState> {
                                 {/*e: header posting  */}
                                 {/* the posting  */}
                                 <Typography.Paragraph style={{ margin: "0 0 10px" }}>
-                                    <p>
-                                        Next.js is a React framework that is used to build fast, high-performance, hybrid static and server side rendering web applications. Ant Design is a UI library that
-                                        provides a lot of pre-made React components like Button, DatePicker, DropDown, Drawer, etc, which can help you create beautiful and enterprise-class products.
-                                    </p>
-                                    <p>
-                                        Tempo hari aku sudah Konsul dengan tim penilai, banyak masukan dari sana. Kemudian aq revisi draft ku, sesuai arahan tim penilai. Sekarang tinggal tanda tangan atasan.
-                                        Ternyata masih ada yang harus direvisi lagi. Melelahkan memang proses ini. Persis saat pengajuan karya tulis. Hari ini revisi bagian ini. Besok masih ada bagian lain
-                                        lagi. Terus begitu.  Kenapa g dari awal? kalau memang drat itu salah, ya coret-coret saja sekalian. Revisinya juga sekalian. Ini malah satu-satu. 
-                                    </p>
-                                    <p>
-                                        Aku menarik nafas. Sabar. Sabar. Sabar. Ini ujian. Mau naik kelas harus melalui proses ujian. Ayo semangat. Demi semuanya. Pasti aku bisa. Semangat ku kembali datang.
-                                        Kujalani proses ini satu-satu, mulai dari begadang sampai pagi entry data. Kemudian ngedeprok didepan laptop tanpa kenal waktu. Mengabaikan suami dan keluarga. Untung nya
-                                        suami support penuh. Sehingga urusan tetek bengek keluarga dia yang atur. Alhamdulillah.  Selanjutnya wira-wiri konsul sana-sini.Sampai terakhir, pontang-panting minta
-                                        tanda tangan dan ACC.
-                                    </p>
-                                    <p>
-                                        " Dek, surat ijin belajar mu kok berbeda. Harusnya ijin belajar saja, kenapa kok bunyinya  berbeda?" Bu Heni ,tim penilai menghubungi ku menyampaikan kalau permasalahan
-                                        yang menjadi kendala. Aku menyampaikan bahwa itu sudah sesuai dengan permintaan. Dan surat itu dianggap sama dengan surat ijin belajar.
-                                    </p>
-                                    <p>" Gini aja, tolong hubungi kepegawaian saja, solusinya bagaimana!"</p>
-                                    <p>"Baiklah Bu!" Kembali aku mengiyakan dan berusaha mencari solusi.</p>
-                                    <p>Padahal kemarin aku sudah tenang, berkas sudah kelar. Pikirku, tinggal terbit surat penetapan. Malah ada lagi. Ah.. harus lebih bersabar lagi. Ini ujian.</p>
-                                    <p>
-                                        Next.js is a React framework that is used to build fast, high-performance, hybrid static and server side rendering web applications. Ant Design is a UI library that
-                                        provides a lot of pre-made React components like Button, DatePicker, DropDown, Drawer, etc, which can help you create beautiful and enterprise-class products.
-                                    </p>
-                                    <p>
-                                        Tempo hari aku sudah Konsul dengan tim penilai, banyak masukan dari sana. Kemudian aq revisi draft ku, sesuai arahan tim penilai. Sekarang tinggal tanda tangan atasan.
-                                        Ternyata masih ada yang harus direvisi lagi. Melelahkan memang proses ini. Persis saat pengajuan karya tulis. Hari ini revisi bagian ini. Besok masih ada bagian lain
-                                        lagi. Terus begitu.  Kenapa g dari awal? kalau memang drat itu salah, ya coret-coret saja sekalian. Revisinya juga sekalian. Ini malah satu-satu. 
-                                    </p>
                                     <p>
                                         Aku menarik nafas. Sabar. Sabar. Sabar. Ini ujian. Mau naik kelas harus melalui proses ujian. Ayo semangat. Demi semuanya. Pasti aku bisa. Semangat ku kembali datang.
                                         Kujalani proses ini satu-satu, mulai dari begadang sampai pagi entry data. Kemudian ngedeprok didepan laptop tanpa kenal waktu. Mengabaikan suami dan keluarga. Untung nya

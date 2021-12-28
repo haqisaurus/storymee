@@ -59,7 +59,7 @@ class PostItem extends React.Component<PostItemProps, PostItemState> {
                                             <Avatar size={45} shape="circle" src={postDetail?.creator.photo} />
                                         </Col>
                                         <Col flex="auto">
-                                            <Link href={""}>
+                                            <Link href={"/"} passHref>
                                                 <span style={{ display: "block", fontWeight: 500 }}>{postDetail?.creator.username}</span>
                                             </Link>
                                             <sub

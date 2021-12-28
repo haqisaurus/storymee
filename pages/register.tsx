@@ -36,7 +36,7 @@ class Register extends Component<Iprops, IState> {
                                 <Row>
                                     <Col span={24}>
                                         <Form style={{ textAlign: "center", padding: "10px 30px" }}>
-                                            <Image src="/logo.png" preview={false} />
+                                            <Image src="/logo.png" preview={false} alt="logo" />
                                             <Formik
                                                 initialValues={this.state.formData}
                                                 validationSchema={yup.object().shape({
