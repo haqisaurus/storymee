@@ -33,7 +33,8 @@ class Home extends React.Component<HomeProps, HomeState> {
                             window.dataLayer = window.dataLayer || [];
                             function gtag(){dataLayer.push(arguments);}
                             gtag('js', new Date());
-                            gtag('config', '[Tracking ID]', { page_path: window.location.pathname });
+
+                            gtag('config', 'G-YVZWMB26G0');
                             `,
                         }}
                     />
