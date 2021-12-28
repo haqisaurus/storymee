@@ -25,6 +25,18 @@ class Home extends React.Component<HomeProps, HomeState> {
                     <meta name="description" content={"Read the most popular stories on StoryMee, the world's largest social storytelling platform."} />
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                     <meta name="google-site-verification" content="vRQvkcrCd1m2M35pJSY9oXp3hBTO-82zIcdgRkkOj0g" />
+                    {/* <!--    (gtag.js) - Google Analytics --> */}
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YVZWMB26G0"></script>
+                    <script
+                        dangerouslySetInnerHTML={{
+                            __html: `
+                            window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+                            gtag('config', '[Tracking ID]', { page_path: window.location.pathname });
+                            `,
+                        }}
+                    />
                 </Head>
                 <Layout>
                     <HeaderNoAuth />
