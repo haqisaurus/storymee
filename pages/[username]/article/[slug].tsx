@@ -39,6 +39,7 @@ class PostItem extends React.Component<PostItemProps, PostItemState> {
                     </title>
                     <meta name="description" content={meta} />
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                    <meta name="google-site-verification" content="vRQvkcrCd1m2M35pJSY9oXp3hBTO-82zIcdgRkkOj0g" />
                 </Head>
                 <Layout>
                     {isAuth ? <HeaderAuth /> : <HeaderNoAuth />}

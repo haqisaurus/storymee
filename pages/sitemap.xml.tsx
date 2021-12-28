@@ -5,7 +5,7 @@ import { getSitemap } from "../services/user.services";
 const Sitemap: React.FC = () => null;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-    const response: any = await fetch("http://localhost:8080/api/v1/sitemap");
+    const response: any = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/v1/sitemap");
     const posts = await response.json();
 
     if (context.res) {
