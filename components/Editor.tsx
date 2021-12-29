@@ -68,29 +68,21 @@ class Editor extends React.Component<EditorProps, EditorState> {
                                             }}
                                             config={{
                                                 height: "500px",
-                                                extraPlugins: "easyimage",
-                                                removePlugins: "image",
-                                                easyimage_styles: {
-                                                    full: {
-                                                        // Changes just the class name, the label icon remains unchanged.
-                                                        attributes: {
-                                                            class: "easy-image-class",
-                                                        },
-                                                    },
-                                                    skipBorder: {
-                                                        attributes: {
-                                                            class: "skip-border",
-                                                        },
-                                                        group: "borders",
-                                                        label: "Skip border",
-                                                        icon: "icons/skip-border.png",
-                                                        iconHiDpi: "icons/skip-border.hidpi.png",
-                                                    },
-                                                },
+                                                extraPlugins: "uploadimage",
+                                                filebrowserUploadUrl: process.env.NEXT_PUBLIC_API_URL + "/api/v1/media",
+                                                filebrowserImageUploadUrl: process.env.NEXT_PUBLIC_API_URL + "/api/v1/media",
                                                 editorUrl: "https://cdn.ckeditor.com/4.17.1/standard-all/ckeditor.js",
                                             }}
                                             onBeforeLoad={(CKEDITOR) => {
                                                 const _this = this;
+                                                console.log(CKEDITOR);
+                                                CKEDITOR.editor.on("fileUploadRequest", function (evt: any) {
+                                                    var xhr = evt.data.fileLoader.xhr;
+
+                                                    xhr.setRequestHeader("Cache-Control", "no-cache");
+                                                    xhr.setRequestHeader("Authorization", "Bearer ");
+                                                    xhr.withCredentials = true;
+                                                });
                                             }}
                                         />
                                     </Form.Item>
