@@ -2,7 +2,7 @@ import { Row, Col, Space, Input, Button, Layout } from "antd";
 import Link from "next/link";
 import Script from "next/script";
 import React from "react";
-import NextHeader from "next/head";
+import Head from "next/head";
 
 interface HeaderNoAuthProps {}
 
@@ -13,7 +13,7 @@ class HeaderNoAuth extends React.Component<HeaderNoAuthProps, HeaderNoAuthState>
     render() {
         return (
             <>
-                <NextHeader>
+                <Head>
                     {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
                     <Script src="https://www.googletagmanager.com/gtag/js?id=G-YVZWMB26G0" strategy="afterInteractive" />
                     <Script id="google-analytics" strategy="afterInteractive">
@@ -26,7 +26,7 @@ class HeaderNoAuth extends React.Component<HeaderNoAuthProps, HeaderNoAuthState>
                     `}
                     </Script>
                     <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9062353665916694"></Script>
-                </NextHeader>
+                </Head>
                 <Layout.Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>
                     <Row justify="space-between">
                         <Col span={12}>
