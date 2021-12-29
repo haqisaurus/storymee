@@ -44,7 +44,6 @@ class PostItem extends React.Component<PostItemProps, PostItemState> {
                 <Layout>
                     {isAuth ? <HeaderAuth /> : <HeaderNoAuth />}
                     <Layout.Content>
-                        <div style={{ width: "100%", height: 150, backgroundColor: "blue", marginBottom: 10 }}></div>
                         <Card className="dashbord-card" style={{ width: "100%", marginBottom: 10 }}>
                             {/* the posting  */}
                             <Typography.Title>{postDetail?.title}</Typography.Title>
@@ -81,7 +80,6 @@ class PostItem extends React.Component<PostItemProps, PostItemState> {
                             {/* e: the posting  */}
                             <Divider style={{ margin: "7px 0 24px" }} />
                         </Card>
-                        <div style={{ width: "100%", height: 150, backgroundColor: "blue", marginBottom: 10 }}></div>
                     </Layout.Content>
                 </Layout>
             </>

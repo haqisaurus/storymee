@@ -1,12 +1,11 @@
 import { PlusOutlined } from "@ant-design/icons";
-import { Avatar, Button, Col, Dropdown, Input, Menu, Row, Space } from "antd";
-import { Header } from "antd/lib/layout/layout";
+import { Avatar, Button, Col, Dropdown, Input, Menu, Row, Space, Layout } from "antd";
 import Link from "next/link";
 import Script from "next/script";
 import React from "react";
 import { BehaviorSubject } from "rxjs";
 import Router from "next/router";
-
+import NextHeader from "next/head";
 interface HeaderAuthProps {}
 
 interface HeaderAuthState {}
@@ -32,19 +31,21 @@ class HeaderAuth extends React.Component<HeaderAuthProps, HeaderAuthState> {
     render() {
         return (
             <>
-                {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-                <Script src="https://www.googletagmanager.com/gtag/js?id=G-YVZWMB26G0" strategy="afterInteractive" />
-                <Script id="google-analytics" strategy="afterInteractive">
-                    {`
+                <NextHeader>
+                    {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+                    <Script src="https://www.googletagmanager.com/gtag/js?id=G-YVZWMB26G0" strategy="afterInteractive" />
+                    <Script id="google-analytics" strategy="afterInteractive">
+                        {`
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){window.dataLayer.push(arguments);}
                     gtag('js', new Date());
-
+                    
                     gtag('config', 'G-YVZWMB26G0');
                     `}
-                </Script>
-                <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9062353665916694"></Script>
-                <Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>
+                    </Script>
+                    <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9062353665916694"></Script>
+                </NextHeader>
+                <Layout.Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>
                     <Row justify="space-between">
                         <Col span={12}>
                             <Space>
@@ -102,7 +103,7 @@ class HeaderAuth extends React.Component<HeaderAuthProps, HeaderAuthState> {
                             </Space>
                         </Col>
                     </Row>
-                </Header>
+                </Layout.Header>
             </>
         );
     }

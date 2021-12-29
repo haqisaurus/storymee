@@ -1,9 +1,8 @@
-import { PlusOutlined } from "@ant-design/icons";
-import { Row, Col, Menu, Space, Input, Button, Dropdown, Avatar } from "antd";
-import { Header } from "antd/lib/layout/layout";
+import { Row, Col, Space, Input, Button, Layout } from "antd";
 import Link from "next/link";
 import Script from "next/script";
 import React from "react";
+import NextHeader from "next/head";
 
 interface HeaderNoAuthProps {}
 
@@ -14,19 +13,21 @@ class HeaderNoAuth extends React.Component<HeaderNoAuthProps, HeaderNoAuthState>
     render() {
         return (
             <>
-                {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-                <Script src="https://www.googletagmanager.com/gtag/js?id=G-YVZWMB26G0" strategy="afterInteractive" />
-                <Script id="google-analytics" strategy="afterInteractive">
-                    {`
+                <NextHeader>
+                    {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+                    <Script src="https://www.googletagmanager.com/gtag/js?id=G-YVZWMB26G0" strategy="afterInteractive" />
+                    <Script id="google-analytics" strategy="afterInteractive">
+                        {`
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){window.dataLayer.push(arguments);}
                     gtag('js', new Date());
-
+                    
                     gtag('config', 'G-YVZWMB26G0');
                     `}
-                </Script>
-                <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9062353665916694"></Script>
-                <Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>
+                    </Script>
+                    <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9062353665916694"></Script>
+                </NextHeader>
+                <Layout.Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>
                     <Row justify="space-between">
                         <Col span={12}>
                             <Space>
@@ -60,7 +61,7 @@ class HeaderNoAuth extends React.Component<HeaderNoAuthProps, HeaderNoAuthState>
                             </Space>
                         </Col>
                     </Row>
-                </Header>
+                </Layout.Header>
             </>
         );
     }
