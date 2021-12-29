@@ -4,6 +4,8 @@ import { Header } from "antd/lib/layout/layout";
 import Link from "next/link";
 import Script from "next/script";
 import React from "react";
+import { BehaviorSubject } from "rxjs";
+import Router from "next/router";
 
 interface HeaderAuthProps {}
 
@@ -19,6 +21,14 @@ class HeaderAuth extends React.Component<HeaderAuthProps, HeaderAuthState> {
             username,
         });
     }
+    logout() {
+        const token: any = localStorage.getItem("token");
+        const tokenSubject: any = new BehaviorSubject(process.browser && JSON.parse(token));
+        localStorage.removeItem("token");
+        localStorage.removeItem("username");
+        tokenSubject.next(null);
+        Router.push("/login");
+    }
     render() {
         return (
             <>
@@ -33,6 +43,7 @@ class HeaderAuth extends React.Component<HeaderAuthProps, HeaderAuthState> {
                     gtag('config', 'G-YVZWMB26G0');
                     `}
                 </Script>
+                <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9062353665916694"></Script>
                 <Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>
                     <Row justify="space-between">
                         <Col span={12}>
@@ -69,7 +80,6 @@ class HeaderAuth extends React.Component<HeaderAuthProps, HeaderAuthState> {
                                                     Profile
                                                 </a>
                                             </Menu.Item>
-
                                             <Menu.Item>
                                                 <a rel="noopener noreferrer" href={`/@${this.state.username}/preferences`}>
                                                     Settings
@@ -81,7 +91,9 @@ class HeaderAuth extends React.Component<HeaderAuthProps, HeaderAuthState> {
                                                     My Stories
                                                 </a>
                                             </Menu.Item>
-                                            <Menu.Item danger>Logout</Menu.Item>
+                                            <Menu.Item danger onClick={this.logout}>
+                                                Logout
+                                            </Menu.Item>
                                         </Menu>
                                     }
                                 >

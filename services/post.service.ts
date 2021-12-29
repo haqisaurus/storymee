@@ -23,3 +23,11 @@ export function getMyArticles(params: any) {
 export function getArticleDetail(slug: string) {
     return axios.get(process.env.NEXT_PUBLIC_API_URL + "/api/v1/post/" + slug);
 }
+export function getArticleDetailID(id: string) {
+    const token = window.localStorage.getItem("token");
+    return axios.get(process.env.NEXT_PUBLIC_API_URL + "/api/v1/post/" + id + "/id", {
+        headers: {
+            Authorization: "Bearer " + token,
+        },
+    });
+}

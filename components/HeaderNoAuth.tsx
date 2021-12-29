@@ -25,6 +25,7 @@ class HeaderNoAuth extends React.Component<HeaderNoAuthProps, HeaderNoAuthState>
                     gtag('config', 'G-YVZWMB26G0');
                     `}
                 </Script>
+                <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9062353665916694"></Script>
                 <Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>
                     <Row justify="space-between">
                         <Col span={12}>
