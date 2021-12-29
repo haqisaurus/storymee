@@ -2,7 +2,6 @@ import { Avatar, Card, Carousel, Col, Divider, Layout, Row, Typography, Image } 
 import React from "react";
 import HeaderAuth from "../../../components/HeaderAuth";
 import HeaderNoAuth from "../../../components/HeaderNoAuth";
-import { NextRouter, withRouter } from "next/router";
 import { getArticleDetail } from "../../../services/post.service";
 import htmlParser from "html-react-parser";
 import Link from "next/link";
@@ -41,9 +40,19 @@ class PostItem extends React.Component<PostItemProps, PostItemState> {
                     <meta name="description" content={meta} />
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 </Head>
+                <Script id="google-ads" strategy="afterInteractive">
+                    {`
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    `}
+                </Script>
                 <Layout>
                     {isAuth ? <HeaderAuth /> : <HeaderNoAuth />}
                     <Layout.Content>
+                        <div style={{ width: "100%", height: 150, backgroundColor: "grey", marginBottom: 10 }}>
+                            {htmlParser(
+                                `<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9062353665916694" data-ad-slot="9878192199" data-ad-format="auto" data-full-width-responsive="true"></ins>`
+                            )}
+                        </div>
                         <Card className="dashbord-card" style={{ width: "100%", marginBottom: 10 }}>
                             {/* the posting  */}
                             <Typography.Title>{postDetail?.title}</Typography.Title>
@@ -80,6 +89,11 @@ class PostItem extends React.Component<PostItemProps, PostItemState> {
                             {/* e: the posting  */}
                             <Divider style={{ margin: "7px 0 24px" }} />
                         </Card>
+                        <div style={{ width: "100%", height: 150, backgroundColor: "grey", marginBottom: 10 }}>
+                            {htmlParser(
+                                `<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9062353665916694" data-ad-slot="9878192199" data-ad-format="auto" data-full-width-responsive="true"></ins>`
+                            )}
+                        </div>
                     </Layout.Content>
                 </Layout>
             </>
