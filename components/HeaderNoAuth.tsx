@@ -2,7 +2,6 @@ import { Row, Col, Space, Input, Button, Layout } from "antd";
 import Link from "next/link";
 import Script from "next/script";
 import React from "react";
-import Head from "next/head";
 
 interface HeaderNoAuthProps {}
 
@@ -13,20 +12,19 @@ class HeaderNoAuth extends React.Component<HeaderNoAuthProps, HeaderNoAuthState>
     render() {
         return (
             <>
-                <Head>
-                    {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-                    <Script src="https://www.googletagmanager.com/gtag/js?id=G-YVZWMB26G0" strategy="afterInteractive" />
-                    <Script id="google-analytics" strategy="afterInteractive">
-                        {`
+                {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+                <Script src="https://www.googletagmanager.com/gtag/js?id=G-YVZWMB26G0" strategy="afterInteractive" />
+                <Script id="google-analytics" strategy="afterInteractive">
+                    {`
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){window.dataLayer.push(arguments);}
                     gtag('js', new Date());
                     
                     gtag('config', 'G-YVZWMB26G0');
                     `}
-                    </Script>
-                    <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9062353665916694"></Script>
-                </Head>
+                </Script>
+                <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9062353665916694"></Script>
+
                 <Layout.Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>
                     <Row justify="space-between">
                         <Col span={12}>
