@@ -53,6 +53,16 @@ class PostItem extends React.Component<PostItemProps, PostItemState> {
                                 `<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9062353665916694" data-ad-slot="9878192199" data-ad-format="auto" data-full-width-responsive="true"></ins>`
                             )}
                         </div>
+                        {htmlParser(
+                            `<ins
+                                    class="adsbygoogle"
+                                    style="display:block; text-align:center;"
+                                    data-ad-layout="in-article"
+                                    data-ad-format="fluid"
+                                    data-ad-client="ca-pub-9062353665916694"
+                                    data-ad-slot="4733676726"
+                                    ></ins>`
+                        )}
                         <Card className="dashbord-card" style={{ width: "100%", marginBottom: 10 }}>
                             {/* the posting  */}
                             <Typography.Title>{postDetail?.title}</Typography.Title>

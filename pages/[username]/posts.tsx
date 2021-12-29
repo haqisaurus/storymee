@@ -61,7 +61,6 @@ class Posts extends React.Component<PostsProps, PostsState> {
                             renderItem={(post: any) => (
                                 <Card key={post._id} style={{ marginBottom: 10 }}>
                                     <List.Item
-                                        extra={<Button type="text" icon={<EditFilled />} href={"/" + username + "/article/edit/" + post._id} />}
                                         actions={[
                                             <this.IconText icon={StarOutlined} text="156" key="list-vertical-star-o" />,
                                             <this.IconText icon={LikeOutlined} text="156" key="list-vertical-like-o" />,
@@ -75,9 +74,14 @@ class Posts extends React.Component<PostsProps, PostsState> {
                                                 </a>
                                             }
                                             title={<a href={"/" + username + "/article/" + post.slug}>{post.title}</a>}
-                                            description={moment(post.updatedAt).format("LLL")}
+                                            description={
+                                                <Space>
+                                                    <span>{moment(post.updatedAt).format("LLL")}</span>
+                                                    <Button type="text" icon={<EditFilled />} href={"/" + username + "/article/edit/" + post._id} />
+                                                </Space>
+                                            }
                                         />
-                                        {post.images?.[0] && <Image src={post.images[0]} alt={post.title} width={"100%"} />}
+                                        {post.medias?.[0] && <Image src={post.medias[0]} alt={post.title} width={"100%"} />}
                                         {htmlParser(post.content)}
                                     </List.Item>
                                 </Card>
