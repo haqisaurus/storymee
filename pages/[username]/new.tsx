@@ -7,7 +7,10 @@ import HeaderAuth from "../../components/HeaderAuth";
 import { postArticle } from "../../services/post.service";
 import { AxiosResponse } from "axios";
 import Editor from "../../components/Editor";
-interface NewProps {}
+import Router, { NextRouter, withRouter } from "next/router";
+interface NewProps {
+    query: any;
+}
 
 interface NewState {}
 
@@ -22,8 +25,14 @@ class New extends React.Component<NewProps, NewState> {
             hashTags: [] as any[],
             coordinate: null as any,
             mentions: [] as any[],
+            previousID: this.props.query.previousID,
         },
     };
+    static async getInitialProps(ctx: any) {
+        return {
+            query: ctx.query,
+        };
+    }
     render() {
         return (
             <>

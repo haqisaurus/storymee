@@ -7,9 +7,12 @@ import { postArticle } from "../services/post.service";
 import * as yup from "yup";
 import { PlusOutlined } from "@ant-design/icons";
 import imageCompression from "browser-image-compression";
+import Link from "next/link";
+import { withRouter } from "next/router";
 interface EditorProps {
     formData: any;
     setMentions: (x: any) => void;
+    router: any;
 }
 
 interface EditorState {
@@ -24,7 +27,7 @@ class Editor extends React.Component<EditorProps, EditorState> {
     };
 
     componentDidMount() {
-        const files = this.props.formData.medias.map((v: any, i: number) => {
+        const files = this.props.formData?.medias?.map((v: any, i: number) => {
             return {
                 uid: i,
                 name: "image-" + i,
@@ -41,7 +44,7 @@ class Editor extends React.Component<EditorProps, EditorState> {
     render() {
         const { formData } = this.props;
         const { characterInput } = this.state;
-
+        const { username } = this.props.router.query;
         return (
             <Form>
                 <Formik
@@ -53,7 +56,7 @@ class Editor extends React.Component<EditorProps, EditorState> {
                     })}
                     onSubmit={(values, { setSubmitting }) => {
                         const payload = { ...values };
-                        payload.medias = this.state.fileList.map((v: any) => {
+                        payload.medias = this.state.fileList?.map((v: any) => {
                             if (v.url == null) return v.response.url;
                             return v.url;
                         });
@@ -118,7 +121,7 @@ class Editor extends React.Component<EditorProps, EditorState> {
                                             this.setState({ fileList: e.fileList });
                                         }}
                                     >
-                                        {this.state.fileList.length >= 8 ? null : (
+                                        {this.state.fileList?.length >= 8 ? null : (
                                             <div>
                                                 <PlusOutlined />
                                                 <div style={{ marginTop: 8 }}>Upload</div>
@@ -165,6 +168,9 @@ class Editor extends React.Component<EditorProps, EditorState> {
                                     </Form.Item>
                                 </Col>
                                 <Col span={6}>
+                                    <Link passHref href={"/" + username + "/article/" + values.slug}>
+                                        View article
+                                    </Link>
                                     <Typography.Title level={5}>Characters</Typography.Title>
                                     <Input
                                         placeholder="New Character"
@@ -230,7 +236,7 @@ class Editor extends React.Component<EditorProps, EditorState> {
     }
 }
 
-export default Editor;
+export default withRouter(Editor);
 
 declare global {
     interface Window {

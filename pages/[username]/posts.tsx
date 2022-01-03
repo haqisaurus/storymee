@@ -4,7 +4,7 @@ import React from "react";
 import HeaderAuth from "../../components/HeaderAuth";
 import { getMyArticles } from "../../services/post.service";
 import htmlParser from "html-react-parser";
-import { EditFilled, LikeOutlined, MessageOutlined, StarOutlined } from "@ant-design/icons";
+import { EditFilled, ForwardOutlined, LikeOutlined, MessageOutlined, StarOutlined } from "@ant-design/icons";
 import Item from "antd/lib/list/Item";
 import { withRouter } from "next/router";
 import { faPencilAlt } from "@fortawesome/free-solid-svg-icons";
@@ -78,6 +78,7 @@ class Posts extends React.Component<PostsProps, PostsState> {
                                                 <Space>
                                                     <span>{moment(post.updatedAt).format("LLL")}</span>
                                                     <Button type="text" icon={<EditFilled />} href={"/" + username + "/article/edit/" + post._id} />
+                                                    {!post.nextPostID && <Button type="text" icon={<ForwardOutlined />} href={"/" + username + "/new?previousID=" + post._id} />}
                                                 </Space>
                                             }
                                         />
